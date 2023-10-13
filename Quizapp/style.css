@@ -1,0 +1,23 @@
+body {
+    min-height: 100vh;
+    background: #007aff !important;
+
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 56px) !important;
+}
+
+.quiz-card{
+    width: 35rem;
+}
+
+.card-footer {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding-top: 12px;
+    border-top: 2px solid rgba(0,0,0,0.4);
+}
