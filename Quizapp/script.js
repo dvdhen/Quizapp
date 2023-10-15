@@ -5,7 +5,7 @@ let questions = [
     answer_2: "deutscher Gedenktag",
     answer_3: "internationaler Trauertag",
     answer_4: "bayerischer Brauch",
-    right_answer: 1,
+    right_answer: "1",
   },
   {
     question: "Die Volkshochschule in Deutschland ist eine Einrichtung ...",
@@ -13,7 +13,7 @@ let questions = [
     answer_2: "für den Religionsunterricht.",
     answer_3: "zur Weiterbildung.",
     answer_4: "nur für Jugendliche.",
-    right_answer: 3,
+    right_answer: "3",
   },
   {
     question: "Was ist in Deutschland ein Brauch zu Weihnachten?",
@@ -21,7 +21,7 @@ let questions = [
     answer_2: "sich mit Masken und Kostümen verkleiden",
     answer_3: "bunte Eir verstecken",
     answer_4: "Kürbisse vor die Tür stellen.",
-    right_answer: 1,
+    right_answer: "1",
   },
   {
     question: "Bei Erziehungsproblemen gehen Sie in Deutschland ...",
@@ -29,7 +29,7 @@ let questions = [
     answer_2: "zum Jungendamt.",
     answer_3: "zum Arz / zur Ärztin.",
     answer_4: "zum Einwohnermeldeamt.",
-    right_answer: 2,
+    right_answer: "2",
   },
   {
     question:
@@ -38,13 +38,12 @@ let questions = [
     answer_2: "bei Gesundheitsamt.",
     answer_3: "beim Finanzamt",
     answer_4: "bei der Kommune (Stadt oder Gemeinde)",
-    right_answer: 4,
+    right_answer: "4",
   },
 ];
 
 let currentQuestion = 0;
 let rightAnswers = 0;
-let question = questions[currentQuestion];
 
 function init() {
   document.getElementById("all-questions").innerHTML = questions.length;
@@ -119,7 +118,7 @@ function answer(selection) {
   let selectedAnswer = selection.slice(-1);
   let idOfRightAnswer = `answer_${question.right_answer}`;
 
-  if (selectedAnswer == question.right_answer) {
+  if (rightAnswerSelected(selectedAnswer, question)) {
     document.getElementById(selection).parentNode.classList.add("bg-success");
     rightAnswers++;
   } else {
@@ -131,7 +130,7 @@ function answer(selection) {
   document.getElementById("next-button").disabled = false;
 }
 
-function rightAnswerSelected(selectedAnswer) {
+function rightAnswerSelected(selectedAnswer, question) {
   return selectedAnswer == question.right_answer;
 }
 
